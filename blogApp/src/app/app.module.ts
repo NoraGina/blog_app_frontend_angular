@@ -14,6 +14,9 @@ import { ItemsComponent } from './user/items/items.component';
 import { CommentsComponent } from './user/comments/comments.component';
 import { AddCommentComponent } from './user/add-comment/add-comment.component';
 import { ViewPostComponent } from './user/view-post/view-post.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,9 +35,11 @@ import { ViewPostComponent } from './user/view-post/view-post.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
