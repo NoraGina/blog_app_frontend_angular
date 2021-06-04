@@ -10,7 +10,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterSuccessComponent } from './user/register-success/register-success.component';
 import { ProfileComponent } from './user/profile/profile.component';
-import { ItemsComponent } from './user/items/items.component';
+
 import { CommentsComponent } from './user/comments/comments.component';
 import { AddCommentComponent } from './user/add-comment/add-comment.component';
 import { ViewPostComponent } from './user/view-post/view-post.component';
@@ -28,7 +28,6 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     LoginComponent,
     RegisterSuccessComponent,
     ProfileComponent,
-    ItemsComponent,
     CommentsComponent,
     AddCommentComponent,
     ViewPostComponent
