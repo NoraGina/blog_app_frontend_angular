@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { PostDetailsComponent } from './admin/post-details/post-details.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     ProfileComponent,
     CommentsComponent,
     AddCommentComponent,
-    ViewPostComponent
+    ViewPostComponent,
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,

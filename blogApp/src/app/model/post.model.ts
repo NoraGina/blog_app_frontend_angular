@@ -11,4 +11,7 @@ export class Post {
  countComments!:number;
  countViews!:number;
  date!:string;
+ updateDate!:string;
+ time!:string;
+ updateTime!:string;
 }
