@@ -51,11 +51,11 @@ export class PostsService {
     return this.httpClient.put<Post>(AUTH_API+'/'+id+'/dislike', updatedPost)
   }
 
- /* addComment(id:number, newComment:Comment){
+ addComment(id:number, newComment:Comment){
     return this.httpClient.post<Comment>(AUTH_API+'/'+id+'/comment', newComment);
   }
 
   getComments(id:number): Observable<Comment[]>{
     return this.httpClient.get<Comment[]>(AUTH_API+'/'+id+'/comments');
-  }*/
+  }
 }
