@@ -17,6 +17,7 @@ import { ViewPostComponent } from './user/view-post/view-post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    EditorModule
+
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
