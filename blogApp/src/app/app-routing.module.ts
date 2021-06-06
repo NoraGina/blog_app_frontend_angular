@@ -6,6 +6,7 @@ import { LoginComponent } from './user/login/login.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { RegisterSuccessComponent } from './user/register-success/register-success.component';
 import { RegisterComponent } from './user/register/register.component';
+import { ViewPostComponent } from './user/view-post/view-post.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,7 +15,9 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   { path: 'profile', component: ProfileComponent },
   {path: 'register-success', component: RegisterSuccessComponent},
-  {path:'posts', component:PostsComponent}
+  {path:'posts', component:PostsComponent},
+
+  {path:'post/:id', component:ViewPostComponent}
 ];
 
 @NgModule({

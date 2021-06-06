@@ -1,1 +1,26 @@
-<p>view-post works!</p>
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-8">
+        <h1 class="blog-title">{{post?.title}}</h1>
+        <span>
+                  <p>by {{post?.author}}</p>
+              </span>
+        <hr>
+        <p>Description {{post?.description}}</p>
+        <hr>
+        <p>Created on: {{post?.date}}&nbsp;{{post?.time}}</p>
+        <hr>
+        <p>Updated on: {{post?.updateDate}}&nbsp;{{post?.updateTime}}</p>
+        <hr>
+        <p [innerHTML]="post?.content"></p>
+        <hr>
+        <button class="btn btn-outline-primary" (click)="addLike()">Like</button>&nbsp;
+        <button class="btn btn-outline-warning" (click)="addDislike()">Dislike</button>&nbsp;
+        <button class="btn btn-outline-info" (click)="back()">Back</button>
+      </div>
+    </div>
+
+  </div>
+</div>
