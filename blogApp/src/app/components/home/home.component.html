@@ -1,1 +1,52 @@
-<p>home works!</p>
+<div class="container">
+  <div class="row row-cols-auto" >
+    <div class="col-4 bg-light p-3 border" *ngFor="let post of posts ">
+      <div class="card text-center" style="width: 22rem;">
+      <img src="{{post.retrievedImage}}"  class="card-img-top" alt="Image">
+      <div class="card-body">
+        <h4 class="card-title">Title: {{post?.title}}</h4>
+         <h5> <i class="far fa-user"></i> Author:{{post?.author}}</h5>
+        <p class="card-text">Description: {{post?.description}}</p>
+        <table class="table-light">
+          <thead>
+            <tr>
+              <th scope="col">Like</th>
+              <th scope="col">Dislike</th>
+              <th scope="col">Views</th>
+              <th scope="col">Comments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{post.countLike}}</td>
+              <td> {{post.countDislike}}</td>
+              <td> {{post.countViews}}</td>
+              <td>{{post.countComments}}</td>
+            </tr>
+        </table>
+
+  <table class="table-light">
+    <thead>
+      <tr>
+        <th scope="col"><a href="/post/{{post.id}}"  class="btn btn-outline-primary" role="button">Post details</a></th>
+
+      </tr>
+    </thead>
+  </table>
+  <table class="table-light">
+    <thead>
+      <tr>
+
+        <th scope="col"><a href="/post/{{post.id}}/comment"  class="btn btn-outline-primary" role="button">Add comment</a></th>
+        <th scope="col"><a href="/post/{{post.id}}/comments"  class="btn btn-outline-primary" role="button">Comments</a></th>
+      </tr>
+    </thead>
+  </table>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+

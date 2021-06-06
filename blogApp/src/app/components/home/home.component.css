@@ -1,0 +1,27 @@
+.container{
+  width: 100%;
+}
+.count-span{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+th{
+  padding-right: 2px;
+}
+.col{
+  margin-top: 5px;
+}
+
+
+
+.card-img-top {
+  margin: auto;
+  width: 90%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.table-light{
+  width: 100%;
+}
