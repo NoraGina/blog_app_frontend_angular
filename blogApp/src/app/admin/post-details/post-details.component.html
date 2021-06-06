@@ -1,9 +1,9 @@
-<div class="bookDetails">
+<!--<div class="bookDetails">
   <h2>Post Details</h2>
 
   <table>
     <tr>
-      <td>Post Id {{post?.id}}</td><td></td>
+      <td> {{post?.id}}</td><td></td>
     </tr>
     <tr>
       <td>Title</td><td>{{post?.title}}</td>
@@ -31,4 +31,34 @@
   <a class="btn btn-small btn-warning" (click)="editPost()">edit</a>
   <a class="btn btn-small btn-danger" (click)="deletePost()">delete</a>
 
+</div>-->
+
+<div class="container-md">
+  <h2>Post Details</h2>
+<dl class="row">
+  <dt class="col-sm-3">Post Id</dt>
+  <dd class="col-sm-9">{{post?.id}}</dd>
+
+  <dt class="col-sm-3">Author</dt>
+  <dd class="col-sm-9">{{post?.author}}</dd>
+
+  <dt class="col-sm-3">Created on</dt>
+  <dd class="col-sm-9">{{post?.date}}</dd>
+
+  <dt class="col-sm-3 ">Updated on</dt>
+  <dd class="col-sm-9">{{post?.updateDate}}</dd>
+
+  <dt class="col-sm-3">Description</dt>
+  <dd class="col-sm-9">{{post?.description}}</dd>
+
+  <dt class="col-sm-3">Content</dt>
+  <dd class="col-sm-9">
+    <p [innerHTML]="post?.content"></p>
+  </dd>
+
+  <dt class="col-sm-3">Image</dt>
+  <dd class="col-sm-9"><img src="{{post?.retrievedImage}}" height="150" width="150"></dd>
+</dl>
+<a class="btn btn-small btn-outline-secondary" (click)="editPost()">edit</a>&nbsp;
+  <a class="btn btn-small  btn-outline-danger" (click)="deletePost()">delete</a>
 </div>

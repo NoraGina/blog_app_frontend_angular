@@ -1,1 +1,28 @@
-<p>posts works!</p>
+<h1>Posts Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addPost()">Add New Post</a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table-light">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Post title</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts" class="table-light">
+          <td>{{post.id}}</td>
+          <td>{{post.title}}</td>
+          <td>
+            <button type="button" class="btn btn-outline-info btn-sm" (click)="viewPost(post.id)" >Show Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-add-post *ngIf="action === 'edit' || action === 'add'" [post]="selectedPost!" (postAddedEvent)="refreshData()"></app-add-post>
+    <app-post-details *ngIf="action === 'view'" [post]="selectedPost!" (postDeletedEvent)="refreshData()"></app-post-details>
+  </div>
+</div>

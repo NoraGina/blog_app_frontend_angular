@@ -1,0 +1,12 @@
+
+.profile{
+  color: azure;
+  text-decoration: none;
+  opacity: 0.7;
+}
+.profile:hover{
+  opacity: 0.9;
+}
+.nav-item{
+  font-weight: 700;
+}

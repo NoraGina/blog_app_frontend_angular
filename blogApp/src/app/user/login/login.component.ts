@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
+  currentUser: any;
 
   constructor(private authService: AuthService, private router:Router,
     private tokenStorage: TokenStorageService, private location:Location) { }
@@ -27,6 +28,7 @@ export class LoginComponent implements OnInit {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
+
     }
   }
 
@@ -35,14 +37,14 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(username, password).subscribe(
       data => {
-        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveToken(data!.accessToken);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-
+        console.log("Token: "+data!.accessToken)
         if(this.roles.includes('ROLE_USER')){
-            this.router.navigateByUrl("/");
+            this.router.navigateByUrl('/');
 
         }if(this.roles.includes('ROLE_ADMIN')){
           this.reloadPage();
@@ -59,7 +61,6 @@ export class LoginComponent implements OnInit {
   reloadPage(): void {
     window.location.reload();
   }
-
   back(): void {
     this.location.back()
   }

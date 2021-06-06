@@ -1,1 +1,18 @@
-<p>add-post works!</p>
+<form>
+
+  <label for="name">Title</label>
+  <input type="text" class="form-control" id="name" placeholder="Post title" [(ngModel)]="post.title" name="title">
+  <label for="author">Description</label>
+  <input type="text" class="form-control" id="price" placeholder="Description" name="description" [(ngModel)]="post.description"/>
+  <div class="form-group">
+    <label class="post-content">Body</label>
+    <editor    apiKey="wjmjsxwfa68xqx4eyvbhfny3fns04tb9no43q0nqce648azt"
+    plugins="wordcount"  [init]="{plugins: 'link'}" name="content" [(ngModel)]="post.content" ></editor>
+  </div>
+  <div class="form-group" >
+    <input type="file" (change)="onFileChanged($event)"/>
+    <img [src]="imgURL" height="150" width="150" *ngIf="imgURL">
+  </div>
+  <br><br>
+  <button type="button" class="btn btn-success" (click)="savePost()">Save Post</button>
+</form>

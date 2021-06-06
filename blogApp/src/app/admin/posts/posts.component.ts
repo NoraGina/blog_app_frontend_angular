@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/model/post.model';
 import { PostsService } from 'src/app/services/posts.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-posts',
@@ -15,15 +16,21 @@ export class PostsComponent implements OnInit {
   selectedPost?: Post ;
   action!: string;
 
+  currentUser: any;
+
   constructor(private postService: PostsService,
     private activedRoute: ActivatedRoute,
-    private router: Router) { }
+    private router: Router, private tokenStorageService:TokenStorageService) { }
 
   ngOnInit(): void {
     this.refreshData();
+
+
+
   }
 
   refreshData() {
+
     this.postService.getPosts().subscribe(
       response => this.handleSuccessfulResponse(response)
     );
@@ -66,11 +73,14 @@ export class PostsComponent implements OnInit {
       postwithRetrievedImageField.countDislike=post.countDislike;
       postwithRetrievedImageField.countViews=post.countViews;
       postwithRetrievedImageField.countComments = post.countComments;
+      postwithRetrievedImageField.date = post.date;
+      postwithRetrievedImageField.updateDate = post.updateDate;
       this.posts.push(postwithRetrievedImageField);
     }
   }
 
   addPost() {
+
     this.selectedPost = new Post();
     this.router.navigate(['posts'], { queryParams: { action: 'add' } });
   }

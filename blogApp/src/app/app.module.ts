@@ -16,7 +16,7 @@ import { AddCommentComponent } from './user/add-comment/add-comment.component';
 import { ViewPostComponent } from './user/view-post/view-post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { authorotyInterceptorProviders } from './_helpers/auth.interceptor';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { PostDetailsComponent } from './admin/post-details/post-details.component';
 
@@ -44,7 +44,7 @@ import { PostDetailsComponent } from './admin/post-details/post-details.componen
     EditorModule
 
   ],
-  providers: [authInterceptorProviders],
+  providers: [authorotyInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
