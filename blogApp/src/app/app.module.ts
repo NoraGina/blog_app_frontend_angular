@@ -15,7 +15,7 @@ import { CommentsComponent } from './user/comments/comments.component';
 import { AddCommentComponent } from './user/add-comment/add-comment.component';
 import { ViewPostComponent } from './user/view-post/view-post.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
@@ -36,6 +36,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [authInterceptorProviders],
