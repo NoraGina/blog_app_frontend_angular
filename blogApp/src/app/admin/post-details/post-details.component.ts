@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Post } from 'src/app/model/post.model';
@@ -16,7 +17,8 @@ export class PostDetailsComponent implements OnInit {
   @Output()
   postDeletedEvent = new EventEmitter();
 
-  constructor(private postService:PostsService, private router:Router) { }
+  constructor(private postService:PostsService, private router:Router,
+    private location:Location) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +34,10 @@ export class PostDetailsComponent implements OnInit {
 
   editPost() {
     this.router.navigate(['posts'], { queryParams: { action: 'edit', id: this.post.id } });
+  }
+
+  back(){
+    this.location.back();
   }
 
 }

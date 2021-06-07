@@ -1,1 +1,18 @@
-<p>comments works!</p>
+<div class="container-md">
+  <h3>Comments for {{post?.title}}</h3>
+  <br>
+  <div class="col align-self-center"  *ngFor="let comment of comments">
+    <strong><span>Author:&nbsp;</span><span><em>{{comment.username}}</em></span></strong>
+    <br>
+    <strong><span>Created:&nbsp;</span>
+      <span><em>{{comment.date}}</em></span>&nbsp;
+      <span><em>{{comment.time}}</em></span>
+    </strong>
+    <br>
+    <strong><span>Content:&nbsp;</span><span><em>{{comment.text}}</em></span></strong>
+    <hr>
+  </div>
+  <a href="/post/{{post?.id}}/comment"  class="btn btn-outline-primary" role="button">Add comment</a>
+  &nbsp;
+  <a href="/"  class="btn btn-outline-secondary" role="button">Home</a>
+</div>

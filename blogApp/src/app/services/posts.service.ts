@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { Post } from '../model/post.model';
+import{ PostComment } from '../model/postComment.model';
 
 const AUTH_API = 'http://localhost:8080/posts';
 
@@ -34,6 +35,10 @@ export class PostsService {
     return this.httpClient.get<Post>(AUTH_API+'/get/'+id);
   }
 
+  getOnePost(id:number):Observable<Post>{
+    return this.httpClient.get<Post>(AUTH_API+'/getOne/'+id);
+  }
+
 
   deletePost(id: number) {
     return this.httpClient.delete<Post>(AUTH_API +'/' + id);
@@ -51,11 +56,11 @@ export class PostsService {
     return this.httpClient.put<Post>(AUTH_API+'/'+id+'/dislike', updatedPost)
   }
 
- addComment(id:number, newComment:Comment){
-    return this.httpClient.post<Comment>(AUTH_API+'/'+id+'/comment', newComment);
+ addComment(id:number, newComment:PostComment){
+    return this.httpClient.post<PostComment>(AUTH_API+'/'+id+'/comment', newComment);
   }
 
-  getComments(id:number): Observable<Comment[]>{
-    return this.httpClient.get<Comment[]>(AUTH_API+'/'+id+'/comments');
+  getComments(id:number): Observable<PostComment[]>{
+    return this.httpClient.get<PostComment[]>(AUTH_API+'/'+id+'/comments');
   }
 }

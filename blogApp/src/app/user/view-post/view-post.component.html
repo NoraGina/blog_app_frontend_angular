@@ -1,26 +1,29 @@
 <div class="content">
   <div class="container">
     <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-8">
+
+      <div class="col-md-6">
         <h1 class="blog-title">{{post?.title}}</h1>
-        <span>
-                  <p>by {{post?.author}}</p>
-              </span>
+        <strong><span>By:</span>&nbsp;<em><span>{{post?.author}}</span></em></strong>
+               <br>
         <hr>
-        <p>Description {{post?.description}}</p>
+        <strong><span>Description:</span>&nbsp;<em><span>{{post?.description}}</span></em></strong>
+               <br>
         <hr>
-        <p>Created on: {{post?.date}}&nbsp;{{post?.time}}</p>
+        <strong><span>Created in:</span>&nbsp;<em><span>{{post?.date}}&nbsp;{{post?.time}}</span></em></strong>
+               <br>
         <hr>
-        <p>Updated on: {{post?.updateDate}}&nbsp;{{post?.updateTime}}</p>
-        <hr>
+        <strong><span>Updated in:</span>&nbsp;<em><span>{{post?.updateDate}}&nbsp;{{post?.updateTime}}</span></em></strong>
+        <br>
+      <hr>
+
         <p [innerHTML]="post?.content"></p>
         <hr>
         <button class="btn btn-outline-primary" (click)="addLike()">Like</button>&nbsp;
         <button class="btn btn-outline-warning" (click)="addDislike()">Dislike</button>&nbsp;
         <button class="btn btn-outline-info" (click)="back()">Back</button>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>

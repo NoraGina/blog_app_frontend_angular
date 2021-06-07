@@ -44,7 +44,7 @@ export class PostsComponent implements OnInit {
 	// if id exists, convert it to integer and then retrive the post from
 	// the post array
         if (id) {
-          this.selectedPost = this.posts.find(post => {
+          this.selectedPost = this.posts?.find(post => {
             return post.id === +id;
           });
         }

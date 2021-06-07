@@ -1,1 +1,19 @@
-<p>add-comment works!</p>
+<div class="add-post-content">
+  <div class="container">
+    <div>
+      <h3 class="new-post-title">Create New Comment for {{post?.title}}</h3>
+    </div>
+    <hr>
+    <form [formGroup]="addCommentForm"  (ngSubmit)="addComment()">
+
+      <div class="form-group">
+        <label class="post-title">new comment</label>
+        <input type="text" [formControlName]="'body'" class="form-control" placeholder="Title">
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save Comment</button>
+      </div>
+    </form >
+  </div>
+</div>

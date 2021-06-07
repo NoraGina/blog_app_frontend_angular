@@ -1,4 +1,4 @@
-export class Comment {
+export class PostComment {
   id!:number;
   text!:string;
   username!:string;
